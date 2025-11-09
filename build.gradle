@@ -18,6 +18,18 @@ apply plugin: 'eclipse'
 apply from: 'gradle/root/eclipse.gradle'
 apply from: "gradle/support/loadApplicationProperties.gradle"
 
+plugins {
+    id "org.sonarqube" version "5.0.0.4638"
+}
+
+sonar {
+    properties {
+        property "sonar.projectKey", "Filipe-UEM_ghidra"
+        property "sonar.organization", "filipe-uem"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
+
 
 /***************************************************************************************
 * Print current Java and Gradle version and make sure the correct version of gradle is being used
